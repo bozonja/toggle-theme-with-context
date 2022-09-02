@@ -17,7 +17,8 @@ function App() {
         style={{ backgroundColor: darkMode ? "black" : "pink" }}
       >
         <p style={{ color: darkMode ? "white" : "black" }}>
-          This is a simple text
+          This is a simple exercise for toggling light/dark mode with react
+          Context
         </p>
       </div>
     </div>
