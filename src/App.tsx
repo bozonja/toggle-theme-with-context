@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { useState } from "react";
+import React, { useContext } from "react";
 
 import "./App.css";
 //comps
@@ -12,10 +11,15 @@ function App() {
   return (
     <div className="App">
       <TopNavigation />
+      <h1>Toggle theme app</h1>
       <div
         className="content"
         style={{ backgroundColor: darkMode ? "black" : "pink" }}
-      ></div>
+      >
+        <p style={{ color: darkMode ? "white" : "black" }}>
+          This is a simple text
+        </p>
+      </div>
     </div>
   );
 }
