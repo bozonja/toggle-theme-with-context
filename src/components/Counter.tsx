@@ -1,10 +1,10 @@
 import React, { useReducer } from "react";
 
-// function init(initialCount) {
-//   return { count: initialCount };
-// }
+function init(initialCount) {
+  return { count: initialCount };
+}
 
-const initialState = { count: 0 };
+const initialState = 0;
 
 function counterReducer(state, action) {
   switch (action.type) {
@@ -13,14 +13,14 @@ function counterReducer(state, action) {
     case "decrement":
       return { count: state.count - 1 };
     case "reset":
-      return { count: 0 };
+      return init(action.payload);
     default:
       throw new Error("");
   }
 }
 
 export const Counter = () => {
-  const [state, dispatch] = useReducer(counterReducer, initialState);
+  const [state, dispatch] = useReducer(counterReducer, initialState, init);
 
   return (
     <>
@@ -32,7 +32,10 @@ export const Counter = () => {
       <button type="button" onClick={() => dispatch({ type: "decrement" })}>
         -
       </button>
-      <button type="button" onClick={() => dispatch({ type: "reset" })}>
+      <button
+        type="button"
+        onClick={() => dispatch({ type: "reset", payload: initialState })}
+      >
         Reset
       </button>
     </>
