@@ -4,7 +4,7 @@ function init(initialCount) {
   return { count: initialCount };
 }
 
-const initialState = 0;
+const initialCount = 0;
 
 function counterReducer(state, action) {
   switch (action.type) {
@@ -20,7 +20,7 @@ function counterReducer(state, action) {
 }
 
 export const Counter = () => {
-  const [state, dispatch] = useReducer(counterReducer, initialState, init);
+  const [state, dispatch] = useReducer(counterReducer, initialCount, init);
 
   return (
     <>
@@ -34,7 +34,7 @@ export const Counter = () => {
       </button>
       <button
         type="button"
-        onClick={() => dispatch({ type: "reset", payload: initialState })}
+        onClick={() => dispatch({ type: "reset", payload: initialCount })}
       >
         Reset
       </button>
