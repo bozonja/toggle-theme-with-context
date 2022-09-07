@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import "./App.css";
 //comps
+import { Counter } from "./components/Counter";
 import TopNavigation from "./components/TopNavigation.jsx";
 //context
 import { ThemeContext } from "./Context/ThemeContext";
@@ -21,6 +22,7 @@ function App() {
           Context
         </p>
       </div>
+      <Counter />
     </div>
   );
 }
